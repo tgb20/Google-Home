@@ -128,7 +128,7 @@ Save with Ctrl+X and then Y
 
 We then need to make sure we can run our script with `chmod +x googlehome.sh`
 
-Now you can run `./googleassistant.sh` and it will launch Google Home
+Now you can run `./googlehome.sh` and it will launch Google Home
 
 We also need to make the Pi load this script on startup. Open the startup file with `sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart`
 
