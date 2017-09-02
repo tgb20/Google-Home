@@ -109,6 +109,30 @@ To run Google Assistant go to your env terminal window and type `google-assistan
 
 To test just say "Hey Google" and your question
 
+# Run on Boot
 
+A Google Home doesn't require you to do anything to get it running, so why should ours? To make it so the google home script runs at boot we have to do a few things.
+
+The first thing we need to do is make our boot script. We can do this with `sudo nano googlehome.sh`
+
+Inside this file we need to do everything we do to get our google home running:
+```superscript
+#!/bin/sh
+echo Starting Google Home...
+sleep 2
+source env/bin/activate
+google-assistant-demo
+```
+Save with Ctrl+X and then Y
+
+We then need to make sure we can run our script with `chmod +x googlehome.sh`
+
+Now you can run `./googleassistant.sh` and it will launch Google Home
+
+We also need to make the Pi load this script on startup. Open the startup file with `sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart`
+
+Right after it says `@xscreensaver -no-splash`, we want to add `@lxterminal -e /home/pi/googlehome.sh`. This runs our script in the terminal when the pi starts. Save with Ctrl+X and then Y
+
+Now you can type `sudo reboot` to see if it works.
 
 
