@@ -95,6 +95,7 @@ pcm.speaker {
   slave {
     pcm "hw:<card number>,<device number>"
   }
+}
 ```
 
 One final step is to force the Pi to use the 3.5mm headphone jack.
